@@ -25,6 +25,7 @@ jobs:
         continue-on-error: true
         id: test
         run: python -m pytest dz_tp_tz3/Test.py
+      - run: touch test.txt
       - name: Run Time test
         continue-on-error: true
         run: python dz_tp_tz3/time_test.py
