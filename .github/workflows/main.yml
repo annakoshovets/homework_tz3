@@ -38,4 +38,6 @@ jobs:
           message: |
             Commit in repository: ${{ github.repository }}
             Tests result: ${{ steps.test.outcome }}
+            You can see time tests results here:
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
             
