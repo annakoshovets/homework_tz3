@@ -23,7 +23,13 @@ jobs:
           python -m pip install flake8 pytest
       - name: Run Tests
         id: test
-        run: python -m pytest 'dz tp tz3'/Test.py
+        run: python -m pytest dz_tp_tz3/Test.py
+      - name: Run Time test
+        run: python dz_tp_tz3/time_test.py
+      - uses: actions/upload-artifact@v2
+        with:
+          name: time_test_results.txt
+          path: dz_tp_tz3/test.txt
       - name: Telegram
         uses: appleboy/telegram-action@master
         with:
@@ -32,3 +38,4 @@ jobs:
           message: |
             Commit in repository: ${{ github.repository }}
             Tests result: ${{ steps.test.outcome }}
+            
