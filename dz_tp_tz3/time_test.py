@@ -47,3 +47,4 @@ f.write(f"Время выполенения getMin: {time_getMin()}\n")
 f.write(f"Время выполнения getMax: {time_getMax()}\n")
 f.write(f"Время выполнения getSum: {time_getSum()}\n")
 f.write(f"Время выполнения getMult: {time_getMult()}\n")
+
