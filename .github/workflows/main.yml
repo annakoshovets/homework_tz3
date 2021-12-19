@@ -22,9 +22,11 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install flake8 pytest
       - name: Run Tests
+        continue-on-error: true
         id: test
         run: python -m pytest dz_tp_tz3/Test.py
       - name: Run Time test
+        continue-on-error: true
         run: python dz_tp_tz3/time_test.py
       - uses: actions/upload-artifact@v2
         with:
