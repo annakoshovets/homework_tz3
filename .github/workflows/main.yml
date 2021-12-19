@@ -1,10 +1,34 @@
 name: GitHub Actions Tester
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+      - name: Set up python
+        uses: actions/setup-python@v2
+        with: 
+          python-version: "3.10"
+      - name: Set up pytest
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install flake8 pytest
       - name: Run Tests
-        run: python -m unittest
+        id: test
+        run: python -m pytest 'dz tp tz3'/Test.py
+      - name: Telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: "-1001500762490"
+          token: "5035045341:AAGqI639BC6TvFUIjtVnP_pinYhC4md1Dis"
+          message: |
+            Commit in repository: ${{ github.repository }}
+            Tests result: ${{ steps.test.outcome }}
