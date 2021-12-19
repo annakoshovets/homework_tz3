@@ -1,6 +1,6 @@
 import math
 
-with open('numbers') as file:
+with open('numbers.txt') as file:
     readNumbers = file.read()
     numbers = readNumbers.split()
 
