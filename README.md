@@ -1,4 +1,4 @@
-## текущий статус тестирования
+## Текущий статус тестирования
 [![GitHub Actions Tester](https://github.com/annakoshovets/homework_tz3/actions/workflows/main.yml/badge.svg)](https://github.com/annakoshovets/homework_tz3/actions/workflows/main.yml)
 
 ## Выполненное домашнее задание - техническое задание №3 по дисциплине "Технология программирования"
